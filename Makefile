@@ -294,8 +294,8 @@ else ifeq ($(platform), goadvance)
     SINGLE_PREC_FLAGS = 1
     HAVE_LTCG = 0
     HAVE_OPENMP = 0
-    CFLAGS += -march=armv8-a -mtune=cortex-a35 -mcpu=cortex-a35 -O3 -pipe -fno-plt -fdata-sections -ffunction-sections -Wl,--gc-sections -fno-stack-protector -fno-ident -fomit-frame-pointer -fmerge-all-constants -fno-math-errno -Wl,--gc-sections -falign-functions=1 -falign-jumps=1 -falign-loops=1 -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-unroll-loops -fmerge-all-constants -frename-registers -funsafe-math-optimizations -ftree-vectorize
-    CFLAGS += -DHOST_CPU=0x20000002 -DTARGET_LINUX_ARMv8 -DNO_ASM -DARM_ASM -frename-registers -ftree-vectorize -g
+    CFLAGS += -march=armv8-a -mtune=cortex-a35 -mcpu=cortex-a35 -O3 -marm -pipe -fno-plt -fdata-sections -ffunction-sections -Wl,--gc-sections -fno-stack-protector -fno-ident -fomit-frame-pointer -fmerge-all-constants -fno-math-errno -Wl,--gc-sections -falign-functions=1 -falign-jumps=1 -falign-loops=1 -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-unroll-loops -fmerge-all-constants -frename-registers -funsafe-math-optimizations -ftree-vectorize
+    CFLAGS += -DHOST_CPU=0x20000002 -DNO_ASM -DARM_ASM -frename-registers -ftree-vectorize -g
     CXXFLAGS += $(CFLAGS)
     ASFLAGS += $(CFLAGS) -c
     PLATFORM_EXT := unix
